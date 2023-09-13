@@ -1,0 +1,19 @@
+bool isPalindrome(string s) {
+        string ans="";
+        for(int i=0;i<s.size();i++){     // to remove non alphnumeric value and convert uppercase to lowercase
+            if((s[i]>=65 && s[i]<=90) || (s[i]>=97 && s[i]<=122) || s[i]>=48 && s[i]<=57)
+              { if(s[i]>=65 && s[i]<=90)
+                  s[i]=s[i]+32; 
+                 ans+=s[i];
+                }
+        }
+        int i=0,j=ans.size()-1;
+        while(i<=j){
+            if(ans[i]==ans[j])
+            {
+                i++; j--;
+            }
+            else return 0;
+        }
+        return 1;
+    }
