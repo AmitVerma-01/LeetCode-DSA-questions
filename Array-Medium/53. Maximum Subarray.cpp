@@ -40,3 +40,14 @@ int maxSubArray(vector<int>& nums) {
         }
         return maxSum;
     }
+// another form if kadan's algo
+int maxSubArray(vector<int>& nums) {
+        int maxSum=nums[0];
+        int curSum=0;
+        for(int a:nums){
+            curSum=max(curSum,0);
+            curSum+=a;
+            maxSum=max(maxSum,curSum);
+        }
+        return maxSum;
+    }
